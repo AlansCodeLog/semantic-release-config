@@ -1,0 +1,43 @@
+{
+	"name": "@alanscodelog/semantic-release-config",
+	"description": "My preferred semantic release config.",
+	"version": "1.0.0",
+	"main": "release.config.js",
+	"scripts": {
+		"lint:commits": "npx commitlint --from $(git rev-parse --abbrev-ref --symbolic-full-name @{u}) --to HEAD"
+	},
+	"husky": {
+		"hooks": {
+			"pre-push":"npm run lint:commits"
+		}
+	},
+	"dependencies": {},
+	"devDependencies": {
+		"semantic-release": "^17.0.8",
+		"@semantic-release/changelog": "^5.0.1",
+		"@semantic-release/commit-analyzer": "^8.0.1",
+		"@semantic-release/github": "^7.0.7",
+		"@semantic-release/npm": "^7.0.5",
+		"@semantic-release/release-notes-generator": "^9.0.1",
+		"conventional-changelog-conventionalcommits": "^4.3.0",
+		"commitlint": "^8.3.5",
+		"husky": "^4.2.5"
+	},
+	"author": "Alan <alanscodelog@gmail.com>",
+	"repository": "github:alanscodelog/my-semantic-release-config",
+	"license": "MIT",
+	"files": [
+		"release.config.js"
+	],
+	"release": {
+		"extends": "./release.config.js"
+	},
+	"@comments": {
+		"scripts": {
+			"lint:commits": "The --from gets the last pushed commit, i.e. origin/branchname, so that commitlint doesn't lint old commits. If it happens to fail because the branch was never pushed, commitlint just lints all the commits anyways."
+		}
+	},
+	"publishConfig": {
+		"access": "public"
+	}
+}
