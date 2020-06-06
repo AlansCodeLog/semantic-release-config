@@ -1,3 +1,5 @@
+[![Release](https://github.com/alanscodelog/my-semantic-release-config/workflows/Release/badge.svg)](https://www.npmjs.com/package/@alanscodelog/semantic-release-config)
+
 My preferred semantic release config.
 
 # Install

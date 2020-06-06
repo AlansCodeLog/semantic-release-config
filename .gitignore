@@ -1,2 +1,4 @@
 *.log*
+/*lock*
+.vscode
 node_modules

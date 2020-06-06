@@ -1,14 +1,14 @@
 {
 	"name": "@alanscodelog/semantic-release-config",
 	"description": "My preferred semantic release config.",
-	"version": "1.0.0",
+	"version": "0.0.0-semantically-released",
 	"main": "release.config.js",
 	"scripts": {
-		"lint:commits": "npx commitlint --from $(git rev-parse --abbrev-ref --symbolic-full-name @{u}) --to HEAD"
+		"lint:commits": "npx commitlint --from $(git rev-list HEAD --not --remotes | tail -1)^ --to HEAD --verbose"
 	},
 	"husky": {
 		"hooks": {
-			"pre-push":"npm run lint:commits"
+			"pre-push": "npm run lint:commits"
 		}
 	},
 	"dependencies": {},
@@ -20,24 +20,30 @@
 		"@semantic-release/npm": "^7.0.5",
 		"@semantic-release/release-notes-generator": "^9.0.1",
 		"conventional-changelog-conventionalcommits": "^4.3.0",
+		"@alanscodelog/semantic-release-config": "^1.0.0",
+		"@alanscodelog/commitlint-config": "^1.0.0",
 		"commitlint": "^8.3.5",
+
 		"husky": "^4.2.5"
 	},
 	"author": "Alan <alanscodelog@gmail.com>",
-	"repository": "github:alanscodelog/my-semantic-release-config",
+	"repository": "https://github.com/alanscodelog/my-semantic-release-config",
 	"license": "MIT",
 	"files": [
 		"release.config.js"
 	],
-	"release": {
-		"extends": "./release.config.js"
-	},
+	"release": { "extends": [ "./release.config.js" ] },
+	"commitlint": { "extends": [ "@alanscodelog" ] },
 	"@comments": {
+		"devDependencies": {
+			"@alanscodelog/semantic-release-config": "Depends on itself only because the commitlint config package needs it as a peer dependency to get the types. Commitlint might fail if the types change from one version to the other, but then we can just skip the commit hooks."
+		},
 		"scripts": {
-			"lint:commits": "The --from gets the last pushed commit, i.e. origin/branchname, so that commitlint doesn't lint old commits. If it happens to fail because the branch was never pushed, commitlint just lints all the commits anyways."
+			"lint:commits": "Lints all unpushed commits in the active branch."
 		}
 	},
 	"publishConfig": {
 		"access": "public"
 	}
 }
+
