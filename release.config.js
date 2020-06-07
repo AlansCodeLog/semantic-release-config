@@ -26,11 +26,11 @@ const types = [
 	{ scope: "no-release", release: false },
 ]
 
-let releaseRules = types.filter(_ => _.release !== undefined).map(_ => {
-	let entry = { type: _.type, release: _.release }
-	if (_.scope) entry.scope = _.scope
-	return _
-})
+let releaseRules = types.filter(_ => _.release !== undefined).map(_ => (_.scope
+	// if scope is undefined, it's interpreted differently than the scope property not existing at all
+	? { type: _.type, release: _.release, scope: _.scope }
+	: { type: _.type, release: _.release }
+))
 
 let presetConfig_types = types.filter(_ => _.section !== undefined).map(_ => ({ type: _.type, section: _.section, hidden: _.hidden }))
 
