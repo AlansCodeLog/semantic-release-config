@@ -42,6 +42,7 @@
 			"lint:commits": "Lints all unpushed commits in the active branch."
 		}
 	},
+	"TEMPLATE:4df5c37": "Ignore. Commit of the template this was created with / last updated to.",
 	"publishConfig": {
 		"access": "public"
 	}

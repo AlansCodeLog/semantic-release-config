@@ -31,7 +31,6 @@ yarn add -D @alanscodelog/semantic-release-config
 
 `revert` :arrow_backward: Reverts patch)
 
-
 `docs` :book: Documentation` (not released) - not released because they'd get built and published to github pages anyways
 
 `docs(readme)` (patch) - published so npm's readme gets updated
@@ -59,7 +58,7 @@ I set changelog headers just in case I want to unhide them.
 
 # Branches
 
-- any maintanance brances (x.x.x)
+- any maintenance branches (x.x.x)
 - master
 - alpha
 - beta
@@ -79,4 +78,4 @@ Personally I try to stick with master and beta to keep things simple.
 
 - The `@semantic-release/github` and `@semantic-release/npm` plugins are used in the config without options so global options will be passed down to them, but, for other plugins, it doesn't seem possible to override any options that were already passed down to them.
 
-- Aditionally note the debug flag for semantic-release does not seem to reflect the passing of this global options. I have filed an issue regarding all this [here](https://github.com/semantic-release/semantic-release/issues/1567)
+- Additionally note the debug flag for semantic-release does not seem to reflect the passing of this global options. I have filed an issue regarding all this [here](https://github.com/semantic-release/semantic-release/issues/1567)
