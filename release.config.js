@@ -3,6 +3,8 @@
 const hidden = true
 const types = [
 	// scopes can't be configured because they're grouped? not even to hide them?
+	{ breaking: true, release: 'major' },
+
 	{ type: "feat", section: ":star: New Features", release: "minor" },
 	{ type: "fix", section: ":bug: Fixes", release: "patch" },
 	{ type: "revert", section: ":arrow_backward: Reverts", release: "patch" },
@@ -26,11 +28,15 @@ const types = [
 	{ scope: "no-release", release: false },
 ]
 
-let releaseRules = types.filter(_ => _.release !== undefined).map(_ => (_.scope
-	// if scope is undefined, it's interpreted differently than the scope property not existing at all
-	? { type: _.type, release: _.release, scope: _.scope }
-	: { type: _.type, release: _.release }
-))
+let releaseRules = types.filter(_ => _.release !== undefined).map(_ => {
+	let clone = {}
+	for (let key of Object.keys(_)) {
+		if (["scope", "type", "breaking", "release"].includes(key)) {
+			if (_[key] !== undefined) clone[key] = _[key]
+		}
+	}
+	return clone
+})
 
 let presetConfig_types = types.filter(_ => _.section !== undefined).map(_ => ({ type: _.type, section: _.section, hidden: _.hidden }))
 
@@ -38,7 +44,10 @@ module.exports = {
 	__types: types,
 	plugins: [
 		[ "@semantic-release/commit-analyzer", {
-			releaseRules
+			releaseRules,
+			"parserOpts": {
+				"noteKeywords": ["BREAKING CHANGE", "BREAKING CHANGES"]
+			}
 		} ],
 		[ "@semantic-release/release-notes-generator", {
 			preset: "conventionalcommits",
