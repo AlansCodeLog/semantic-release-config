@@ -4,27 +4,22 @@
 	"version": "0.0.0-semantically-released",
 	"main": "release.config.js",
 	"scripts": {
-		"lint:commits": "npx commitlint --from $(git rev-list HEAD --not --remotes | tail -1)^ --to HEAD --verbose"
-	},
-	"husky": {
-		"hooks": {
-			"pre-push": "npm run lint:commits"
-		}
+		"lint:commits": "npx commitlint --from $(git rev-list HEAD --not --remotes | tail -1)^ --to HEAD --verbose",
+		"prepare": "husky install"
 	},
 	"dependencies": {},
 	"devDependencies": {
-		"semantic-release": "^17.3.0",
-		"@semantic-release/changelog": "^5.0.1",
-		"@semantic-release/commit-analyzer": "^8.0.1",
-		"@semantic-release/github": "^7.2.0",
-		"@semantic-release/npm": "^7.0.9",
-		"@semantic-release/release-notes-generator": "^9.0.1",
-		"conventional-changelog-conventionalcommits": "^4.5.0",
-		"@alanscodelog/semantic-release-config": "^1.0.1",
-		"@alanscodelog/commitlint-config": "^1.0.1",
-		"commitlint": "^11.0.0",
-
-		"husky": "^4.3.4"
+		"semantic-release": "^18.0.0",
+		"@semantic-release/changelog": "^6.0.1",
+		"@semantic-release/commit-analyzer": "^9.0.1",
+		"@semantic-release/github": "^8.0.2",
+		"@semantic-release/npm": "^8.0.3",
+		"@semantic-release/release-notes-generator": "^10.0.2",
+		"conventional-changelog-conventionalcommits": "^4.6.1",
+		"@alanscodelog/semantic-release-config": "^1.0.3",
+		"@alanscodelog/commitlint-config": "latest",
+		"commitlint": "^14.1.0",
+		"husky": "^7.0.0"
 	},
 	"author": "Alan <alanscodelog@gmail.com>",
 	"repository": "https://github.com/alanscodelog/my-semantic-release-config",
@@ -34,6 +29,7 @@
 	],
 	"release": { "extends": [ "./release.config.js" ] },
 	"commitlint": { "extends": [ "@alanscodelog" ] },
+	"engines": { "node": ">=14.0.0" },
 	"@comments": {
 		"devDependencies": {
 			"@alanscodelog/semantic-release-config": "Depends on itself only because the commitlint config package needs it as a peer dependency to get the types. Commitlint might fail if the types change from one version to the other, but then we can just skip the commit hooks."
@@ -47,4 +43,3 @@
 		"access": "public"
 	}
 }
-
