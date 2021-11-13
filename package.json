@@ -4,7 +4,7 @@
 	"version": "0.0.0-semantically-released",
 	"main": "release.config.js",
 	"scripts": {
-		"lint:commits": "npx commitlint --from $(git rev-list HEAD --not --remotes | tail -1)^ --to HEAD --verbose",
+		"lint:commits": "commitlint --from $(git rev-list HEAD --not --remotes | tail -1)^ --to HEAD --verbose",
 		"prepare": "husky install"
 	},
 	"dependencies": {},
