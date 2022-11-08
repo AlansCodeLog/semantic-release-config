@@ -19,7 +19,7 @@
 		"@alanscodelog/semantic-release-config": "^1.0.3",
 		"@alanscodelog/commitlint-config": "latest",
 		"commitlint": "^14.1.0",
-		"husky": "^7.0.0"
+		"husky": "^8.0.2"
 	},
 	"author": "Alan <alanscodelog@gmail.com>",
 	"repository": "https://github.com/alanscodelog/my-semantic-release-config",
