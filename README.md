@@ -25,17 +25,33 @@ yarn add -D @alanscodelog/semantic-release-config
 `typename` Changelog Header (release type)
 
 ## Shown in Changelog
+
+
 `feat` :star: New Features (minor)
 
 `fix` :bug: Fixes (patch)
 
-`revert` :arrow_backward: Reverts patch)
+`revert` :arrow_backward: Reverts (patch)
 
 `docs` :book: Documentation` (not released) - not released because they'd get built and published to github pages anyways
 
 `docs(readme)` (patch) - published so npm's readme gets updated
 
 `perf` :rocket: Performance Improvements (patch)
+
+### 0.0.0 Versioned Releases
+
+Workaround for semantic-release's lack of 0.0.0 versioning ([see](https://github.com/semantic-release/semantic-release/issues/1507)).
+
+For the following to work there must be an initial commit tagged v0.0.0 (I usually just make this empty. After, a `v0feat: initial commit` can be made and semantic release will release it as v0.0.1. So long as you use `v0*` release types or any release type that is only a patch, you will stay in major version 0.
+
+`v0feat` :star: New Features (patch)
+
+`v0fix` :bug: Fixes (patch) - technically a regular fix would also work
+
+`v0breaking` :warning: BREAKING CHANGES (minor) - use this tag for breaking changes, it looks like a breaking change in release logs but isn't really one for semantic-release.
+
+***Do NOT use BREAKING CHANGES in the commit text, it will cause a major version bump.***
 
 ## Hidden from the Changelog
 I set changelog headers just in case I want to unhide them.

@@ -5,6 +5,9 @@ const types = [
 	// scopes can't be configured because they're grouped? not even to hide them?
 	{ breaking: true, release: 'major' },
 
+	{ type: "v0feat", section: ":star: New Features", release: "patch" },
+	{ type: "v0fix", section: ":bug: Fixes", release: "patch" },
+	{ type: "v0breaking", section: ":warning: BREAKING CHANGES", release: "minor" },
 	{ type: "feat", section: ":star: New Features", release: "minor" },
 	{ type: "fix", section: ":bug: Fixes", release: "patch" },
 	{ type: "revert", section: ":arrow_backward: Reverts", release: "patch" },
