@@ -5,7 +5,7 @@
 	"main": "release.config.js",
 	"scripts": {
 		"lint:commits": "commitlint --from $(git rev-list --max-parents=0 HEAD) --to HEAD --verbose",
-		"prepare": "husky" 
+		"prepare": "husky"
 	},
 	"dependencies": {
 		"@alanscodelog/commitlint-config": ">=3.0.0",
@@ -19,7 +19,7 @@
 		"semantic-release": "^23.1.1"
 	},
 	"devDependencies": {
-		"commitlint": "^19.3.0",
+		"@commitlint/cli": "^19.3.0",
 		"husky": "^9.0.11"
 	},
 	"author": "Alan <alanscodelog@gmail.com>",
