@@ -1,3 +1,8 @@
+import fs from "fs"
+const __dirname = import.meta.dirname;
+const commitPartial = fs.readFileSync(`${__dirname}/template.hbs`).toString()
+
+const showCommitBody = process.env.SEMANTIC_RELEASE_HIDE_COMMIT_BODY !== 'TRUE'
 
 // feat, fix, revert, docs(readme), perf, tests, chore, deps, ci, build, style, refactor, [any type](no-release)
 const hidden = true
@@ -72,6 +77,18 @@ export default{
 					let title_compare = types_a_index - types_b_index
 					return title_compare
 				},
+				...(showCommitBody ? {
+					commitPartial,
+					finalizeContext: (context) => {
+						for (const commitGroup of context.commitGroups) {
+							for (const commit of commitGroup.commits) {
+								if (commit.body?.includes("<!--skip-release-notes-->")) continue
+								commit.commitBody = commit.body//?.split('\n')
+							}
+						}
+						return context
+					}
+				} :{}),
 			},
 			presetConfig: {
 				types: presetConfig_types

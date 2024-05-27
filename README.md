@@ -1,6 +1,6 @@
 [![Release](https://github.com/alanscodelog/my-semantic-release-config/workflows/Release/badge.svg)](https://www.npmjs.com/package/@alanscodelog/semantic-release-config)
 
-My preferred semantic release config.
+My preferred semantic release config, with support for 0.0.0 versioned releases and showing the full commit body in the release notes.
 
 # Install
 
@@ -26,7 +26,6 @@ yarn add -D @alanscodelog/semantic-release-config
 
 ## Shown in Changelog
 
-
 `feat` :star: New Features (minor)
 
 `fix` :bug: Fixes (patch)
@@ -38,6 +37,8 @@ yarn add -D @alanscodelog/semantic-release-config
 `docs(readme)` (patch) - published so npm's readme gets updated
 
 `perf` :rocket: Performance Improvements (patch)
+
+The commit body is shown by default, this can be disabled by setting the `SEMANTIC_RELEASE_HIDE_COMMIT_BODY` environment variable to `TRUE`, or per commit by adding `<!--skip-release-notes-->` to the commit body.
 
 ### 0.0.0 Versioned Releases
 
