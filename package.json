@@ -27,7 +27,8 @@
 	"repository": "https://github.com/alanscodelog/my-semantic-release-config",
 	"license": "MIT",
 	"files": [
-		"release.config.js"
+		"release.config.js",
+		"template.hbs"
 	],
 	"release": {
 		"extends": [
