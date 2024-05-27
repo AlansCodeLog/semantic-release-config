@@ -2,6 +2,7 @@
 	"name": "@alanscodelog/semantic-release-config",
 	"description": "My preferred semantic release config.",
 	"version": "0.0.0-semantically-released",
+	"type": "module",
 	"main": "release.config.js",
 	"scripts": {
 		"lint:commits": "commitlint --from $(git rev-list --max-parents=0 HEAD) --to HEAD --verbose",

@@ -31,8 +31,8 @@ const types = [
 	{ scope: "no-release", release: false },
 ]
 
-let releaseRules = types.filter(_ => _.release !== undefined).map(_ => {
-	let clone = {}
+const releaseRules = types.filter(_ => _.release !== undefined).map(_ => {
+	const clone = {}
 	for (let key of Object.keys(_)) {
 		if (["scope", "type", "breaking", "release"].includes(key)) {
 			if (_[key] !== undefined) clone[key] = _[key]
@@ -41,9 +41,9 @@ let releaseRules = types.filter(_ => _.release !== undefined).map(_ => {
 	return clone
 })
 
-let presetConfig_types = types.filter(_ => _.section !== undefined).map(_ => ({ type: _.type, section: _.section, hidden: _.hidden }))
+const presetConfig_types = types.filter(_ => _.section !== undefined).map(_ => ({ type: _.type, section: _.section, hidden: _.hidden }))
 
-module.exports = {
+export default{
 	__types: types,
 	plugins: [
 		[ "@semantic-release/commit-analyzer", {
