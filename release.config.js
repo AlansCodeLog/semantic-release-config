@@ -47,18 +47,22 @@ const releaseRules = types.filter(_ => _.release !== undefined).map(_ => {
 })
 
 const presetConfig_types = types.filter(_ => _.section !== undefined).map(_ => ({ type: _.type, section: _.section, hidden: _.hidden }))
+const parserOpts = {
+	noteKeywords: ["BREAKING CHANGE", "BREAKING CHANGES"]
+}
 
 export default{
 	__types: types,
 	plugins: [
 		[ "@semantic-release/commit-analyzer", {
 			releaseRules,
-			"parserOpts": {
-				"noteKeywords": ["BREAKING CHANGE", "BREAKING CHANGES"]
-			}
+			parserOpts,
 		} ],
 		[ "@semantic-release/release-notes-generator", {
-			preset: "conventionalcommits",
+			parserOpts,
+			presetConfig: {
+				types: presetConfig_types
+			},
 			writerOpts: {
 				groupBy: "type",
 				// sorts commits in each group by if they have a scope (last) and then by date
@@ -90,9 +94,6 @@ export default{
 					}
 				} :{}),
 			},
-			presetConfig: {
-				types: presetConfig_types
-			}
 		} ],
 		"@semantic-release/github",
 		"@semantic-release/npm",
