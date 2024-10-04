@@ -96,12 +96,13 @@ export default{
 				} :{}),
 			},
 		} ],
+		// careful, order here matters, see https://github.com/semantic-release/semantic-release/issues/1593#issuecomment-656866839
+		"@semantic-release/npm",
 		["@semantic-release/git", {
 			"assets": [ "package.json" ],
 			"message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
 		}],
 		"@semantic-release/github",
-		"@semantic-release/npm",
 	],
 	branches: [
 		"+([0-9])?(.{+([0-9]),x}).x",
