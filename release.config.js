@@ -17,9 +17,10 @@ const types = [
 	{ type: "fix", section: ":bug: Fixes", release: "patch" },
 	{ type: "revert", section: ":arrow_backward: Reverts", release: "patch" },
 
-	{ type: "docs", section: ":book: Documentation", release: false }, // they'd get built and published anyways
-	{ type: "docs", scope: "readme", release: "patch" }, // so npm's readme is updated
-
+	// they'd get built and published anyways
+	{ type: "docs", section: ":book: Documentation", release: false },
+	// so npm's readme is updated
+	{ type: "docs", scope: "readme", release: "patch" },
 	{ type: "perf", section: ":rocket: Performance Improvements", release: "patch" },
 
 	// HIDDEN
