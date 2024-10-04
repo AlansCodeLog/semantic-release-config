@@ -94,6 +94,7 @@ Personally I try to stick with master and beta to keep things simple.
 ```bash
 @semantic-release/commit-analyzer
 @semantic-release/release-notes-generator
+@semantic-release/git
 @semantic-release/github
 @semantic-release/npm
 ```
