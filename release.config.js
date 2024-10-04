@@ -100,8 +100,8 @@ export default{
 			"assets": [ "package.json" ],
 			"message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
 		}],
-		"@semantic-release/github",
-		"@semantic-release/npm",
+		// "@semantic-release/github",
+		// "@semantic-release/npm",
 	],
 	branches: [
 		"+([0-9])?(.{+([0-9]),x}).x",
