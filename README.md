@@ -1,7 +1,13 @@
 [![Release](https://github.com/alanscodelog/my-semantic-release-config/actions/workflows/release.yml/badge.svg)](https://github.com/alanscodelog/my-semantic-release-config/actions/workflows/release.yml)
 [![NPM Version (with latest tag)](https://img.shields.io/npm/v/%40alanscodelog%2Fsemantic-release-config/latest)](https://www.npmjs.com/package/@alanscodelog/semantic-release-config/v/latest)
 
-My preferred semantic release config, with support for 0.0.0 versioned releases and showing the full commit body in the release notes.
+My preferred semantic release config:
+
+# Features
+
+- Support for 0.0.0 versioned releases.
+- Shows the full commit body in the release notes.
+- Uses `semantic-release/git` to commit the version change (makes packages in monorepos easier to handle).
 
 # Install
 
