@@ -1,7 +1,7 @@
 {
 	"name": "@alanscodelog/semantic-release-config",
 	"description": "My preferred semantic release config.",
-	"version": "5.0.1",
+	"version": "5.0.2",
 	"type": "module",
 	"main": "release.config.js",
 	"scripts": {
