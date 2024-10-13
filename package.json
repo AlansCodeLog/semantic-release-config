@@ -24,7 +24,7 @@
 		"husky": "^9.0.11"
 	},
 	"author": "Alan <alanscodelog@gmail.com>",
-	"repository": "https://github.com/alanscodelog/my-semantic-release-config",
+	"repository": "https://github.com/alanscodelog/semantic-release-config",
 	"license": "MIT",
 	"files": [
 		"release.config.js",
