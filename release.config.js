@@ -61,6 +61,9 @@ export default{
 		} ],
 		[ "@semantic-release/release-notes-generator", {
 			parserOpts,
+			// this HAS to be here even though we completely override it because
+			// it is not the default and only it supports the presetConfig options
+			preset: "conventionalcommits",
 			presetConfig: {
 				types: presetConfig_types
 			},
