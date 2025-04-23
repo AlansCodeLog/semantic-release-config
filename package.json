@@ -10,7 +10,7 @@
 	},
 	"dependencies": {
 		"@alanscodelog/commitlint-config": "^3.0.2",
-		"@alanscodelog/semantic-release-config": "^5.0.1",
+		"@alanscodelog/semantic-release-config": "^5.0.4",
 		"@semantic-release/changelog": "^6.0.3",
 		"@semantic-release/commit-analyzer": "^13.0.0",
 		"@semantic-release/git": "^10.0.1",
