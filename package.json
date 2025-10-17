@@ -11,10 +11,10 @@
 	"dependencies": {
 		"@alanscodelog/commitlint-config": "^3.1.2",
 		"@alanscodelog/semantic-release-config": "^5.0.4",
+		"@anolilab/semantic-release-pnpm": "^2.0.4",
 		"@semantic-release/changelog": "^6.0.3",
 		"@semantic-release/commit-analyzer": "^13.0.1",
 		"@semantic-release/git": "^10.0.1",
-		"@semantic-release/npm": "^12.0.1",
 		"@semantic-release/github": "^11.0.4",
 		"@semantic-release/release-notes-generator": "^14.0.3",
 		"conventional-changelog-conventionalcommits": "^8.0.0",

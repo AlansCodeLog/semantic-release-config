@@ -100,7 +100,7 @@ export default{
 			},
 		} ],
 		// careful, order here matters, see https://github.com/semantic-release/semantic-release/issues/1593#issuecomment-656866839
-		"@semantic-release/npm",
+		"@anolilab/semantic-release-pnpm",
 		["@semantic-release/git", {
 			"assets": [ "package.json" ],
 			"message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
