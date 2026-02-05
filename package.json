@@ -10,18 +10,14 @@
 	},
 	"dependencies": {
 		"@alanscodelog/commitlint-config": "^3.1.2",
-		"@alanscodelog/semantic-release-config": "^5.0.4",
-		"@anolilab/semantic-release-pnpm": "^2.0.4",
+		"@anolilab/semantic-release-pnpm": "^5.0.0",
 		"@semantic-release/changelog": "^6.0.3",
-		"@semantic-release/commit-analyzer": "^13.0.1",
 		"@semantic-release/git": "^10.0.1",
-		"@semantic-release/github": "^11.0.4",
-		"@semantic-release/release-notes-generator": "^14.0.3",
-		"conventional-changelog-conventionalcommits": "^8.0.0",
-		"semantic-release": "^24.2.7"
+		"conventional-changelog-conventionalcommits": "^9.1.0",
+		"semantic-release": "^25.0.3"
 	},
 	"devDependencies": {
-		"@commitlint/cli": "^19.8.1",
+		"@commitlint/cli": "^20.4.1",
 		"husky": "^9.1.7"
 	},
 	"author": "Alan <alanscodelog@gmail.com>",
@@ -45,9 +41,6 @@
 		"node": ">=20"
 	},
 	"@comments": {
-		"devDependencies": {
-			"@alanscodelog/semantic-release-config": "Depends on itself only because the commitlint config package needs it as a peer dependency to get the types. Commitlint might fail if the types change from one version to the other, but then we can just skip the commit hooks."
-		},
 		"scripts": {
 			"lint:commits": "commitlint --from-last-tag --to HEAD --verbose"
 		}
